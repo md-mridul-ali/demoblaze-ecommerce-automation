@@ -13,12 +13,12 @@ test('login', async({ page }) => {
     });
     await page.getByRole('button', { name: 'Log in' }).click();
     await page.getByRole('dialog', { name: 'Log in' }).getByLabel('Close')
-    await page.screenshot({ path: 'tests/screenshot/' + Date.now() + 'Login.png' })
+    await page.screenshot({ path: 'tests/screenshot/' + 'Login.png' })
 
     await page.waitForTimeout(3000)
 
     await expect(await page.locator('#nameofuser')).toContainText('Welcome Green Tea');
-    await page.screenshot({ path: 'tests/screenshot/' + Date.now() + 'Login.png' })
+    // await page.screenshot({ path: 'tests/screenshot/' + Date.now() + 'Login.png' })
 
     await page.waitForTimeout(3000);
 
